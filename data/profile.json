@@ -1,0 +1,177 @@
+{
+  "name": {
+    "first": "Shravani",
+    "last": "Kumbhalkar",
+    "full": "Shravani Kumbhalkar"
+  },
+  "email": "shravanikumbhalkar84@gmail.com",
+  "tagline": "Bridging embedded systems, software and AI to build practical solutions for real-world problems.",
+  "description": "2nd-year B.Tech Electronics & Telecommunication student passionate about embedded systems, Python, C++ and AI-driven innovation.",
+  "roles": {
+    "short": "Aspiring Embedded Engineer",
+    "detailed": "B.Tech ENTC Student · Python & C++ Programmer · AI Enthusiast"
+  },
+  "location": {
+    "based": "Nagpur, Maharashtra, India",
+    "availability": "for Opportunities"
+  },
+  "available": true,
+  "bio": "2nd-year Electronics and Telecommunication Engineering student passionate about programming, embedded systems, artificial intelligence, and hardware–software integration. I build practical solutions with C++ and Python, gained hands-on application development experience through Arimini’s 30-Day Industry Readiness Program, and was part of Team Vortex X, winner of Best Use of AI at Hyperthon 2026. Committed to continuous learning and building meaningful projects.",
+  "stats": [
+    {
+      "value": "2",
+      "label": "Awards Won"
+    },
+    {
+      "value": "5",
+      "label": "Certifications"
+    },
+    {
+      "value": "3",
+      "label": "Hackathons"
+    }
+  ],
+  "skills": [
+    "C++ Programmer",
+    "Python Developer",
+    "Embedded Systems",
+    "AI Explorer",
+    "Hardware–Software Integration",
+    "Verilog HDL & FPGA",
+    "Front-End Development",
+    "Software Development",
+    "Problem Solver",
+    "C Programming"
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "role": "30-Day Industry Readiness Program",
+      "company": "Arimini",
+      "companyShort": "ARIMINI",
+      "type": "Training Program",
+      "location": "",
+      "period": "30-Day Program",
+      "periodEnd": "",
+      "bullets": [
+        "Gained hands-on experience in Python application development, debugging, and problem-solving.",
+        "Contributed to a Python-based Attendance Management System, applying programming knowledge to practical application development."
+      ],
+      "desc": "Industry readiness program focused on Python application development.",
+      "tech": [
+        "Python",
+        "Debugging",
+        "Problem Solving"
+      ]
+    },
+    {
+      "id": 2,
+      "role": "Team Member · Team Vortex X",
+      "company": "Hyperthon 2026",
+      "companyShort": "HYPERTHON",
+      "type": "Hackathon",
+      "location": "Priyadarshini College of Engineering, Nagpur",
+      "period": "2026",
+      "periodEnd": "",
+      "bullets": [
+        "Part of Team Vortex X, which won the Best Use of AI award at Hyperthon 2026.",
+        "Event conducted in collaboration with NASA Space Apps and IETE at Priyadarshini College of Engineering, Nagpur.",
+        "Recognition reflects an interest in AI-driven innovation, creative problem-solving, and collaborative development."
+      ],
+      "desc": "Best Use of AI award with Team Vortex X.",
+      "tech": [
+        "AI",
+        "Teamwork",
+        "NASA Space Apps"
+      ]
+    },
+    {
+      "id": 3,
+      "role": "Technical Competition · 1st Place",
+      "company": "IETE Student Forum",
+      "companyShort": "IETE",
+      "type": "Competition",
+      "location": "Priyadarshini College of Engineering, Nagpur",
+      "period": "2026",
+      "periodEnd": "",
+      "bullets": [
+        "Team secured 1st place in the IETE Student Forum Technical Competition 2026 — a first-ever competition victory.",
+        "Rounds covered technical questions, logical challenges, identifying components, and cracking technical clues."
+      ],
+      "desc": "1st place in the IETE Student Forum Technical Competition 2026.",
+      "tech": [
+        "Electronics",
+        "Logical Reasoning",
+        "Teamwork"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Attendance System",
+      "subtitle": "Python-based Attendance Management System",
+      "type": "Python App",
+      "link": "",
+      "linkLabel": "",
+      "image": "/assets/project-attendance.png",
+      "tech": [
+        "Python",
+        "Debugging",
+        "Problem Solving"
+      ],
+      "desc": "Contributed to a Python-based Attendance Management System as part of Arimini’s 30-Day Industry Readiness Program, applying programming knowledge to practical application development, debugging and problem-solving."
+    },
+    {
+      "id": 3,
+      "title": "FPGA Design Flow",
+      "subtitle": "Verilog HDL on Altera DE-Series Kits",
+      "type": "Hands-on Practice",
+      "link": "",
+      "linkLabel": "",
+      "image": "/assets/project-fpga.png",
+      "tech": [
+        "Verilog HDL",
+        "FPGA",
+        "Altera DE Series"
+      ],
+      "desc": "Completed a certified course on the FPGA design flow in Verilog HDL with hands-on practice on Altera DE-series kits, building a foundation for hardware–software integration."
+    }
+  ],
+  "publications": [
+    {
+      "id": 1,
+      "title": "Best Use of AI — Hyperthon 2026",
+      "platform": "Award",
+      "year": "2026",
+      "link": "https://www.linkedin.com/in/shravanikumbhalkar-381610439",
+      "desc": "Team Vortex X won Best Use of AI at Hyperthon 2026, held with NASA Space Apps and IETE at PCE Nagpur."
+    },
+    {
+      "id": 2,
+      "title": "1st Place — IETE Technical Competition",
+      "platform": "Award",
+      "year": "2026",
+      "link": "https://www.linkedin.com/in/shravanikumbhalkar-381610439",
+      "desc": "First-place finish at the IETE Student Forum Technical Competition 2026, PCE Nagpur."
+    },
+    {
+      "id": 3,
+      "title": "NASA Space Apps Challenge 2026",
+      "platform": "Certificate",
+      "year": "2026",
+      "link": "https://www.linkedin.com/in/shravanikumbhalkar-381610439",
+      "desc": "Certificate of Accomplishment for the NASA Space Apps Challenge 2026."
+    }
+  ],
+  "socials": [
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/shravani-kumbhalkar-381610439/"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/shravanikumbhalkar84-gif"
+    }
+  ]
+}

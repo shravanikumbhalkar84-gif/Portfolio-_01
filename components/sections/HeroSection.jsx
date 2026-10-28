@@ -1,0 +1,150 @@
+'use client'
+
+import { useEffect, useRef, Fragment } from 'react'
+import Image from 'next/image'
+import dynamic from 'next/dynamic'
+import { FaGithub, FaLinkedinIn, FaInstagram } from 'react-icons/fa'
+import { gsap } from '@/lib/gsap'
+
+import profile from '@/data/profile.json'
+import content from '@/data/content.json'
+import { withBasePath } from '@/lib/siteConfig'
+import styles from '@/styles/sections/HeroSection.module.css'
+
+const HeroBackground = dynamic(() => import('@/components/three/HeroBackground'), { ssr: false })
+
+const SOCIAL_ICON_MAP = { GitHub: FaGithub, LinkedIn: FaLinkedinIn, Instagram: FaInstagram }
+const SIDEBAR_LABELS  = ['Instagram', 'GitHub', 'LinkedIn']
+
+export default function HeroSection() {
+  const sectionRef     = useRef(null)
+  const greetRef       = useRef(null)
+  const roleRef        = useRef(null)
+  const firstName      = useRef(null)
+  const lastName       = useRef(null)
+  const photoRef       = useRef(null)
+  const pillsRef       = useRef(null)
+  const statsRef       = useRef(null)
+  const socialRef      = useRef(null)
+
+  useEffect(() => {
+    const section = sectionRef.current
+    if (!section) return
+
+    const fadeY = [
+      greetRef.current, roleRef.current,
+      firstName.current, lastName.current,
+      pillsRef.current, statsRef.current,
+    ].filter(Boolean)
+
+    gsap.set(fadeY, { opacity: 0, y: 30 })
+    if (photoRef.current)  gsap.set(photoRef.current,  { opacity: 0, x: 80 })
+    if (socialRef.current) gsap.set(socialRef.current, { opacity: 0, x: -20 })
+
+    const tl = gsap.timeline({ paused: true })
+    tl.to(greetRef.current,       { opacity: 1, y: 0, duration: 0.5,  ease: 'power2.out' })
+      .to(roleRef.current,        { opacity: 1, y: 0, duration: 0.5,  ease: 'power2.out' }, '-=0.3')
+      .to(firstName.current,      { opacity: 1, y: 0, duration: 0.6,  ease: 'power2.out' }, '-=0.2')
+      .to(lastName.current,       { opacity: 1, y: 0, duration: 0.6,  ease: 'power2.out' }, '-=0.4')
+      .to(photoRef.current,       { opacity: 1, x: 0, duration: 0.7,  ease: 'power2.out' }, '-=0.5')
+      .to(pillsRef.current,       { opacity: 1, y: 0, duration: 0.5,  ease: 'power2.out' }, '-=0.3')
+      .to(statsRef.current,       { opacity: 1, y: 0, duration: 0.5,  ease: 'power2.out' }, '-=0.2')
+      .to(socialRef.current,      { opacity: 1, x: 0, duration: 0.5,  ease: 'power2.out' }, '-=0.4')
+
+    const observer = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { tl.play(); observer.disconnect() } },
+      { threshold: 0.3 },
+    )
+    observer.observe(section)
+    return () => { observer.disconnect(); tl.kill() }
+  }, [])
+
+  const sidebarSocials = SIDEBAR_LABELS
+    .map(label => profile.socials.find(s => s.label === label))
+    .filter(Boolean)
+
+  return (
+    <section ref={sectionRef} className={styles.section}>
+
+      <HeroBackground />
+
+      {/* Photo */}
+      <div ref={photoRef} className={styles.photo}>
+        <Image
+          src={withBasePath('/assets/hero-portrait.png')} alt={profile.name.full}
+          fill priority quality={100}
+          sizes="(min-width: 768px) 55vw, 100vw"
+          className={styles.photoImg}
+        />
+      </div>
+
+      {/* Social Sidebar */}
+      <div ref={socialRef} className={styles.socialSidebar}>
+        {sidebarSocials.map(social => {
+          const Icon = SOCIAL_ICON_MAP[social.label]
+          if (!Icon) return null
+          return (
+            <a
+              key={social.label}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+              aria-label={social.label}
+            >
+              <Icon size={15} />
+              <span className={styles.socialLabel}>{social.label}</span>
+            </a>
+          )
+        })}
+        <div className={styles.scrollIndicator}>
+          <span className={styles.scrollText}>Scroll down</span>
+          <svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="1" y="1" width="12" height="20" rx="6" stroke="currentColor" strokeWidth="1.5"/>
+            <circle cx="7" cy="6" r="2" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+
+      {/* Left Content Column */}
+      <div className={styles.content}>
+
+        {/* Greeting */}
+        <div className={styles.greeting}>
+          <p ref={greetRef} className={styles.greetText}>{"Hi, I'm"}</p>
+          <p ref={roleRef}  className={styles.roleText}>{profile.roles.short}</p>
+        </div>
+
+        {/* Stacked Name */}
+        <div className={styles.nameBlock}>
+          <p ref={firstName} className={styles.name}>{profile.name.first}</p>
+          <p ref={lastName}  className={styles.name}>{profile.name.last}</p>
+        </div>
+
+        {/* Tag Pills */}
+        <div ref={pillsRef} className={styles.pills}>
+          {content.hero.pills.map((tag, i) => (
+            <Fragment key={tag}>
+              <span className={styles.pill}>{tag}</span>
+              {i < content.hero.pills.length - 1 && (
+                <span className={styles.pillDot} aria-hidden="true" />
+              )}
+            </Fragment>
+          ))}
+        </div>
+
+        {/* Stats Row */}
+        <div ref={statsRef} className={styles.stats}>
+          {[...profile.stats.slice(0, 2), content.hero.specialistStat].map(s => (
+            <div key={s.label} className={styles.statCard}>
+              <span className={styles.statValue}>{s.value}</span>
+              <span className={styles.statLabel}>{s.label}</span>
+            </div>
+          ))}
+        </div>
+
+      </div>
+
+    </section>
+  )
+}

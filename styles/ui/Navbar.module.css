@@ -1,0 +1,69 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  color: var(--navbar-text);
+}
+
+.time {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.emailBtn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  text-decoration: none;
+  transition: color 0.35s ease;
+}
+
+.emailBtn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s ease;
+  z-index: -1;
+}
+
+.emailBtn:hover {
+  color: #000;
+}
+
+.emailBtn:hover::after {
+  transform: scaleX(1);
+}
+
+/* ── Dark section mode (Work Experience) ────── */
+.darkMode {
+  --navbar-text: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.darkMode .emailBtn {
+  color: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 767px) {
+  .header { padding: 0.75rem 1rem; justify-content: flex-end; }
+  .time   { display: none; }
+  .emailBtn { display: inline-flex; }
+}

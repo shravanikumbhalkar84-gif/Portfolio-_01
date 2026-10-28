@@ -1,0 +1,45 @@
+{
+  "site": {
+    "tagline": "Portfolio 2026"
+  },
+  "hero": {
+    "pills": [
+      "Embedded Systems",
+      "Python & C++",
+      "AI Enthusiast",
+      "Problem Solver"
+    ],
+    "specialistStat": {
+      "value": "Embedded + AI",
+      "label": "Focus"
+    }
+  },
+  "interstitial": {
+    "availabilityLabel": "Availability",
+    "basedInLabel": "Based in",
+    "statLabels": [
+      "Awards\nwon",
+      "Certifications\nearned",
+      "Hackathons\nattended"
+    ]
+  },
+  "experience": {
+    "label": "Experience & Milestones",
+    "countLabel": "Milestones"
+  },
+  "publications": {
+    "watermark": "WINS",
+    "label": "Awards & Certificates",
+    "heading": "Achievements"
+  },
+  "footer": {
+    "eyebrow": "Open to internships & collaborations",
+    "credit": "Designed & developed by",
+    "ctaLines": [
+      "Building embedded",
+      "systems & AI",
+      "solutions that"
+    ],
+    "ctaAccent": "matter."
+  }
+}
